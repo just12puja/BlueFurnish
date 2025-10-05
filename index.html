@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Blue Furnish — Modern Furniture</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r150/three.min.js"></script>
+</head>
+
+<body>
+    <div id="barba-wrapper" data-barba="wrapper">
+        <div class="barba-container" data-barba="container" data-barba-namespace="home">
+            <header class="site-header">
+                <div class="container header-inner">
+                    <a class="brand" href="#">
+                        <svg viewBox="0 0 100 100" class="brand-logo" aria-hidden>
+                            <circle cx="50" cy="50" r="48" />
+                        </svg>
+                        <span class="brand-text">Blue Furnish</span>
+                    </a>
+
+                    <nav class="nav">
+                        <ul class="nav-list">
+                            <li><a href="#shop" class="nav-link">Shop</a></li>
+                            <li><a href="#collections" class="nav-link">Collections</a></li>
+                            <li><a href="#about" class="nav-link">Testimonials</a></li>
+                            <li><a href="#sales-data" class="nav-link">Sales Data</a></li>
+                            <li><a href="#statistics" class="nav-link">Statistics</a></li>
+                            <li><a href="#contact" class="nav-link cta">Contact</a></li>
+                        </ul>
+                        <button class="hamburger" aria-label="Open menu">
+                            <span></span><span></span><span></span>
+                        </button>
+                    </nav>
+                </div>
+            </header>
+
+            <main>
+                <section class="hero" id="home">
+                    <video class="hero-video" autoplay playsinline muted loop poster="assets/hero-poster.jpg">
+                        <source src="ASSETS/striking - any simple object can be used.mp4" type="video/mp4" />
+                    </video>
+
+                    <div class="hero-overlay"></div>
+
+                    <canvas id="three-canvas" class="three-canvas" aria-hidden></canvas>
+
+                    <div class="hero-content container">
+                        <div class="hero-left">
+                            <h1 class="title">Furniture that breathes life into your home</h1>
+                            <p class="subtitle">Handpicked modern pieces — crafted for comfort, designed for life.</p>
+                            <div class="hero-actions">
+                                <a href="#shop" class="btn primary">Shop Now</a>
+                                <a href="#collections" class="btn ghost">View Collections</a>
+                            </div>
+                        </div>
+
+                        <div class="hero-right" aria-hidden>
+                            <div class="card featured-card">
+                                <img src="https://i.pinimg.com/736x/55/af/25/55af25531e71da3142c5e6958137d1d2.jpg" alt="Featured Sofa" />
+                                <div class="card-body">
+                                    <strong>Azure Sofa</strong>
+                                    <span>Minimal | ₹29,999</span>
+                                </div>
+                            </div>
+                            <div class="card featured-card second">
+                                <img src="https://i.pinimg.com/736x/78/0b/29/780b29a01c815064b82853d727ccef15.jpg" alt="Featured Table" />
+                                <div class="card-body">
+                                    <strong>Driftwood</strong>
+                                    <span>Handcrafted | ₹9,999</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="shop" data-title="Shop — Blue Furnish">
+                    <div class="container">
+                        <h2>Shop Our Collection</h2>
+                        <p>Curated furniture for every corner of your home.</p>
+                        <div class="grid">
+                             <article class="product-card">
+                                <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZnVybml0dXJlfHx8fHx8MTY4MTA5ODA0NA&ixlib=rb-4.0.3&q=80&w=1080" alt="Modern Minimalist Chair">
+                                <div class="product-info">
+                                    <h4>Modern Chair</h4>
+                                    <span>₹14,999</span>
+                                </div>
+                            </article>
+                            <article class="product-card">
+                                <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZnVybml0dXJlfHx8fHx8MTY4MTA5ODA1Mg&ixlib=rb-4.0.3&q=80&w=1080" alt="Oak Dining Table">
+                                <div class="product-info">
+                                    <h4>Wooden Table</h4>
+                                     <span>₹22,499</span>
+                                </div>
+                            </article>
+                            <article class="product-card">
+                                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1080" alt="Plush Lounge Sofa">
+                                <div class="product-info">
+                                    <h4>Lounge Sofa</h4>
+                                     <span>₹39,999</span>
+                                </div>
+                            </article>
+                            <article class="product-card">
+                                <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZnVybml0dXJlfHx8fHx8MTY4MTA5ODE4MQ&ixlib=rb-4.0.3&q=80&w=1080" alt="Ergonomic Office Chair">
+                                <div class="product-info">
+                                    <h4>Ergo Chair</h4>
+                                     <span>₹18,999</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="collections" data-title="Collections — Blue Furnish">
+                    <div class="container">
+                        <h2>Collections</h2>
+                        <p>Made with premium materials and timeless design.</p>
+                        <video class="hero-video" autoplay playsinline muted loop poster="assets/hero-poster.jpg">
+                            <source src="ASSETS/parallax animation.mp4" type="video/mp4" />
+                    </div>
+                </section>
+
+                <section class="section" id="about" data-title="About — Blue Furnish">
+                    <div class="container">
+                        <h2>Testimonials</h2>
+                        <p>We craft purposeful furniture with focus on sustainability and comfort.</p>
+                         <video class="hero-video" autoplay playsinline muted loop poster="assets/hero-poster.jpg">
+                            <source src="ASSETS/testimonials.mp4" type="video/mp4" />
+                    </div>
+                </section>
+
+                <section class="section section-sales-data" id="sales-data" data-title="Sales Data — Blue Furnish">
+                    <div class="container">
+                       <div class="chart-header">
+                           <div class="chart-title-area">
+                               <h2>Furniture Sales Data</h2>
+                               <p>Monthly Sales Volume (in units)</p>
+                           </div>
+                           <a href="#" class="download-btn" aria-label="Download the data">
+                               <span>Download Report</span>
+                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.586l-4.293-4.293-1.414 1.414L12 18.414l5.707-5.707-1.414-1.414L12 15.586zM12 4a1 1 0 0 1 1 1v9.586l.707-.707 1.414 1.414L12 18.414l-3.121-3.121 1.414-1.414.707.707V5a1 1 0 0 1 1-1z"/></svg>
+                           </a>
+                       </div>
+                       
+                       <div class="chart-controls">
+                           <div class="filter-group">
+                               <span class="filter-label">Category</span>
+                               <button class="filter-btn">Chairs</button>
+                               <button class="filter-btn">Tables</button>
+                               <button class="filter-btn active">All</button>
+                           </div>
+                           <div class="filter-group">
+                               <span class="filter-label">Period</span>
+                               <button class="filter-btn active">Last Quarter</button>
+                               <button class="filter-btn">Last Year</button>
+                           </div>
+                       </div>
+                       
+                       <div class="chart-legend">
+                           <span><strong>—</strong> Target Sales: 600 units/month</span>
+                           <span><strong>- - -</strong> Average Sales: 500 units/month</span>
+                       </div>
+
+                       <div class="chart-container">
+                           <div class="y-axis">
+                               <span>1200</span><span>1000</span><span>800</span><span>600</span><span>400</span><span>200</span><span>0</span>
+                           </div>
+                           <div class="chart-area">
+                                <div class="target-line" style="--y-pos: calc(100% - (600 / 1200 * 100%)); --line-style: solid;"></div>
+                                <div class="target-line" style="--y-pos: calc(100% - (500 / 1200 * 100%)); --line-style: dashed;"></div>
+                                
+                                <div class="bar" style="--val: 550;" data-value="550" data-label="Jan"></div>
+                                <div class="bar" style="--val: 480;" data-value="480" data-label="Feb"></div>
+                                <div class="bar highlight" style="--val: 920;" data-value="920" data-label="Mar"></div>
+                                <div class="bar" style="--val: 680;" data-value="680" data-label="Apr"></div>
+                                <div class="bar" style="--val: 510;" data-value="510" data-label="May"></div>
+                                <div class="bar low" style="--val: 200;" data-value="200" data-label="Jun"></div>
+                                <div class="bar" style="--val: 450;" data-value="450" data-label="Jul"></div>
+                                <div class="bar" style="--val: 500;" data-value="500" data-label="Aug"></div>
+                                <div class="bar" style="--val: 380;" data-value="380" data-label="Sep"></div>
+                                <div class="bar" style="--val: 720;" data-value="720" data-label="Oct"></div>
+                                <div class="bar highlight" style="--val: 850;" data-value="850" data-label="Nov"></div>
+                                <div class="bar" style="--val: 620;" data-value="620" data-label="Dec"></div>
+                           </div>
+                       </div>
+                       <div class="x-axis-labels">
+                           <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+                       </div>
+                    </div>
+                </section>
+
+                <section class="section section-statistics" id="statistics" data-title="Statistics — Blue Furnish">
+                    <div class="container">
+                        <h2>Company Performance Insights</h2>
+                        <p>Key metrics showcasing our growth and customer satisfaction.</p>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-header">
+                                    <h3>Total Furniture Sales (Units)</h3>
+                                    <span class="change up">from 2024 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-8 8h6v8h4v-8h6z"/></svg> 18%</span>
+                                </div>
+                                <div class="stat-value">62,150</div>
+                                <div class="stat-breakdown">
+                                    <div class="stat-row">
+                                        <span class="year">2025</span>
+                                        <div class="progress-bar-container"><div class="progress-bar" style="width: 100%;"></div></div>
+                                        <span class="value">62,150</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="year">2024</span>
+                                        <div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div>
+                                        <span class="value">53,000</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="year">2023</span>
+                                        <div class="progress-bar-container"><div class="progress-bar" style="width: 70%;"></div></div>
+                                        <span class="value">43,800</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="year">2022</span>
+                                        <div class="progress-bar-container"><div class="progress-bar" style="width: 60%;"></div></div>
+                                        <span class="value">37,200</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="download-btn small">
+                                    <span>Detailed Sales Report</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.414 1.414L14.172 9H4v2h10.172l-3.586 3.586L12 17l6-6z"/></svg>
+                                </a>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-header">
+                                    <h3>Customer Satisfaction (NPS)</h3>
+                                    <span class="change up">from Q2 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-8 8h6v8h4v-8h6z"/></svg> 5 pts</span>
+                                </div>
+                                <div class="stat-value">65</div>
+                                <div class="stat-breakdown">
+                                    <div class="stat-row">
+                                        <span class="year">Q3 2025</span>
+                                        <div class="progress-bar-container"><div class="progress-bar" style="width: 80%;"></div></div>
+                                        <span class="value">65</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="year">Q2 2025</span>
+                                        <div class="progress-bar-container"><div class="progress-bar" style="width: 74%;"></div></div>
+                                        <span class="value">60</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="year">Q1 2025</span>
+                                        <div class="progress-bar-container"><div class="progress-bar" style="width: 70%;"></div></div>
+                                        <span class="value">57</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="year">Q4 2024</span>
+                                        <div class="progress-bar-container"><div class="progress-bar" style="width: 65%;"></div></div>
+                                        <span class="value">52</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="download-btn small">
+                                    <span>Download Feedback Data</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.414 1.414L14.172 9H4v2h10.172l-3.586 3.586L12 17l6-6z"/></svg>
+                                </a>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-header">
+                                    <h3>Website Traffic (Monthly)</h3>
+                                    <span class="change down">from Sep <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20l8-8h-6V4h-4v8H4z"/></svg> 3%</span>
+                                </div>
+                                <div class="stat-value">46,250</div>
+                                <div class="stat-breakdown">
+                                    <div class="stat-row">
+                                        <span class="year">Oct 2025</span>
+                                        <div class="progress-bar-container"><div class="progress-bar" style="width: 90%;"></div></div>
+                                        <span class="value">46,250</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="year">Sep 2025</span>
+                                        <div class="progress-bar-container"><div class="progress-bar" style="width: 93%;"></div></div>
+                                        <span class="value">47,600</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="year">Aug 2025</span>
+                                        <div class="progress-bar-container"><div class="progress-bar" style="width: 88%;"></div></div>
+                                        <span class="value">45,100</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="year">Jul 2025</span>
+                                        <div class="progress-bar-container"><div class="progress-bar" style="width: 80%;"></div></div>
+                                        <span class="value">41,000</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="download-btn small">
+                                    <span>Download Traffic Report</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.414 1.414L14.172 9H4v2h10.172l-3.586 3.586L12 17l6-6z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="contact" data-title="Contact — Blue Furnish">
+                    <div class="container">
+                        <h2>Contact</h2>
+                        <p>Reach out — we'll be happy to help style your space.</p>
+                    </div>
+                </section>
+            </main>
+            
+            <footer class="site-footer">
+                <video class="footer-background-video" autoplay playsinline muted loop>
+                    <source src="ASSETS/ripple effect.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div class="footer-overlay"></div>
+
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-column">
+                            <h4>Blue Furnish</h4>
+                            <p>Crafting comfortable and sustainable furniture for modern living. Designed for life, built to last.</p>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Explore</h4>
+                            <p>Shop<br>Collections<br>About Us</p>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Connect</h4>
+                            <p>Puri, Odisha, India<br>contact@bluefurnish.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-bottom-bar">
+                        <small>© <span id="year"></span> Blue Furnish — All rights reserved.</small>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="main.js" defer></script>
+</body>
+
+</html>
